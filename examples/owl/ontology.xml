@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Ontology>
+    <Prefix IRI="http://example.com/myOntology#" name="myOnt"/>
+    <Import>http://example.com/someOtherOntology</Import>
+    <Declaration>
+        <Class abbreviatedIRI="myOnt:Horse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Grass"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#eats"/>
+    </Declaration>
+    <SubClassOf>
+        <ObjectProperty>
+            <ObjectProperty IRI="#eats"/>
+            <Class IRI="#Grass"/>
+        </ObjectProperty>
+        <Class abbreviatedIRI="myOnt:Horse"/>
+    </SubClassOf>
+</Ontology>
