@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Ontology>
-    <Prefix IRI="http://example.com/myOntology#" name="myOnt"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<Ontology xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3.org/2002/07/owl# http://www.w3.org/2009/09/owl2-xml.xsd"
+    xml:base="http://example.com/myOntology"
+    ontologyIRI="http://example.com/myOntology">
+
+    <Prefix name="myOnt" IRI="http://example.com/myOntology#"/>
     <Import>http://example.com/someOtherOntology</Import>
+
     <Declaration>
         <Class abbreviatedIRI="myOnt:Horse"/>
     </Declaration>
@@ -20,25 +25,29 @@
     <Declaration>
         <ObjectProperty abbreviatedIRI="myOnt:drink"/>
     </Declaration>
+
     <SubClassOf>
-        <ObjectProperty>
+        <Class abbreviatedIRI="myOnt:Horse"/>
+        <ObjectAllValuesFrom>
             <ObjectProperty IRI="#eats"/>
             <Class IRI="#Grass"/>
-        </ObjectProperty>
-        <Class abbreviatedIRI="myOnt:Horse"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
+
     <SubClassOf>
-        <ObjectProperty>
+        <Class abbreviatedIRI="myOnt:Horse"/>
+        <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI="myOnt:drink"/>
             <Class IRI="#Water"/>
-        </ObjectProperty>
-        <Class abbreviatedIRI="myOnt:Horse"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
+
     <SubClassOf>
-        <ObjectProperty>
-            <ObjectProperty abbreviatedIRI="myOnt:drink"/>
-            <Class IRI="#Water"/>
-        </ObjectProperty>
         <Class abbreviatedIRI="myOnt:Human"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="myOnt:drink"/>
+            <Class IRI="#Water"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
+
 </Ontology>

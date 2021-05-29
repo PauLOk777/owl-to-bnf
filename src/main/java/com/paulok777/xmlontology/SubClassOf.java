@@ -12,9 +12,9 @@ public class SubClassOf {
 
     }
 
-    public SubClassOf(OwlClass owlClass, ObjectAllValuesFrom objectProperty) {
+    public SubClassOf(OwlClass owlClass, ObjectAllValuesFrom objectAllValuesFrom) {
         this.owlClass = owlClass;
-        this.objectAllValuesFrom = objectProperty;
+        this.objectAllValuesFrom = objectAllValuesFrom;
     }
 
     @XmlElement(name = "Class")
@@ -26,7 +26,7 @@ public class SubClassOf {
         this.owlClass = owlClass;
     }
 
-    @XmlElement(name = "ObjectProperty")
+    @XmlElement(name = "ObjectAllValuesFrom")
     public ObjectAllValuesFrom getObjectAllValuesFrom() {
         return objectAllValuesFrom;
     }
