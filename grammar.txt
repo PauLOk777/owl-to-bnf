@@ -1,0 +1,8 @@
+thing: 'Thing[' (horse|human|grass|water)+ ']';
+horse: 'Horse{' horseID (',' '[' (horse_eats_grass)?(horse_drink_water)? ']' )? '}';
+horse_eats_grass: '{' 'eats' 'grass' grassID '}';
+horse_drink_water: '{' 'drink' 'water' waterID '}';
+human: 'Human{' humanID (',' '[' (human_drink_water)* ']' )? '}';
+human_drink_water: '{' 'drink' 'water' waterID '}';
+grass: 'Grass{' grassID '}';
+water: 'Water{' waterID '}';

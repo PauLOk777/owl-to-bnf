@@ -1,6 +1,7 @@
 package com.paulok777.xmlontology;
 
 import javax.xml.bind.annotation.XmlElement;
+import java.util.Objects;
 
 public class SubClassOf {
 
@@ -32,6 +33,19 @@ public class SubClassOf {
 
     public void setObjectAllValuesFrom(ObjectAllValuesFrom objectAllValuesFrom) {
         this.objectAllValuesFrom = objectAllValuesFrom;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SubClassOf that = (SubClassOf) o;
+        return Objects.equals(owlClass, that.owlClass) && Objects.equals(objectAllValuesFrom, that.objectAllValuesFrom);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(owlClass, objectAllValuesFrom);
     }
 
     @Override

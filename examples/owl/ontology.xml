@@ -6,10 +6,19 @@
         <Class abbreviatedIRI="myOnt:Horse"/>
     </Declaration>
     <Declaration>
+        <Class abbreviatedIRI="myOnt:Human"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Grass"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Water"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#eats"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="myOnt:drink"/>
     </Declaration>
     <SubClassOf>
         <ObjectProperty>
@@ -17,5 +26,19 @@
             <Class IRI="#Grass"/>
         </ObjectProperty>
         <Class abbreviatedIRI="myOnt:Horse"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectProperty>
+            <ObjectProperty abbreviatedIRI="myOnt:drink"/>
+            <Class IRI="#Water"/>
+        </ObjectProperty>
+        <Class abbreviatedIRI="myOnt:Horse"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectProperty>
+            <ObjectProperty abbreviatedIRI="myOnt:drink"/>
+            <Class IRI="#Water"/>
+        </ObjectProperty>
+        <Class abbreviatedIRI="myOnt:Human"/>
     </SubClassOf>
 </Ontology>

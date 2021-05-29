@@ -20,16 +20,9 @@ public class OntologyParser {
         }
     }
 
-    public Ontology xmlParseOntology(File file) {
-        try {
-            Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-            return (Ontology) unmarshaller.unmarshal(file);
-
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+    public Ontology xmlParseOntology(File file) throws JAXBException {
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        return (Ontology) unmarshaller.unmarshal(file);
     }
 
 }
