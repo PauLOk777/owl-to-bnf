@@ -25,7 +25,7 @@ public class Main {
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
+
+        System.out.println("Successfully converted owl to grammar.");
     }
-
-
 }
